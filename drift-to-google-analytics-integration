@@ -1,0 +1,124 @@
+<script>
+window.drift.on('ready',function(api){ 
+  window.drift.on('message:sent',function(event){ 
+    { 
+	   dataLayer.push({
+              'event': 'messageSent', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Message Sent', 
+              'eventLabel': 'Conversation ID: ' + event.conversationId
+          });
+    } 
+  })
+  
+  window.drift.on('startConversation',function(event){ 
+    { 
+	   dataLayer.push({
+              'event': 'startConversation', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Chat Started', 
+              'eventLabel': 'Conversation ID: ' + event.conversationId
+          });
+    } 
+  })
+  
+    window.drift.on('emailCapture',function(event){ 
+    { 
+	   dataLayer.push({
+              'event': 'emailCapture', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Email Captured', 
+              'eventLabel': 'Open Segment: Drift'
+          });
+    } 
+  })
+  
+  window.drift.on('welcomeMessage:open',function(e){ 
+    { 
+	   dataLayer.push({
+              'event': 'openMessage', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Widget Open', 
+              'eventLabel': 'Open Segment: Drift'
+          });
+    } 
+  }) 
+  
+    window.drift.on('welcomeMessage:close',function(e){ 
+    { 
+	   dataLayer.push({
+              'event': 'closeMessage', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Widget Closed', 
+              'eventLabel': 'Open Segment: Drift'
+          });
+    } 
+  }) 
+  
+  window.drift.on('sidebarOpen',function(e){ 
+    { 
+	   dataLayer.push({
+              'event': 'openSidebar', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Sidebar Open', 
+              'eventLabel': 'Open Segment: Drift'
+          });
+    } 
+  }) 
+  window.drift.on('sidebarClose',function(e){ 
+    { 
+	   dataLayer.push({
+              'event': 'closeSidebar', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Sidebar Close', 
+              'eventLabel': 'Open Segment: Drift'
+          });
+    } 
+  })  
+  
+  window.drift.on('campaign:open',function(event){ 
+    { 
+	   dataLayer.push({
+              'event': 'openCampaign', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Open Campaign', 
+              'eventLabel': 'Campaign ID: ' + event.campaignId
+          });
+    } 
+  })
+  
+    window.drift.on('campaign:dismiss',function(event){ 
+    { 
+	   dataLayer.push({
+              'event': 'dismissCampaign', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Dismiss Campaign', 
+              'eventLabel': 'Campaign ID: ' + event.campaignId
+          });
+    } 
+  })
+  
+  window.drift.on('campaign:click',function(event){ 
+    { 
+	   dataLayer.push({
+              'event': 'clickCampaign', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Click Campaign', 
+              'eventLabel': 'Campaign ID: ' + event.campaignId
+          });
+    } 
+  })
+  
+  window.drift.on('campaign:submit',function(event){ 
+    { 
+	   dataLayer.push({
+              'event': 'submitCampaign', 
+              'eventCategory': 'Drift Widget', 
+              'eventAction': 'Submit Campaign', 
+              'eventLabel': 'Campaign ID: ' + event.campaignId
+          });
+    } 
+  })
+  
+}) 
+</script>
